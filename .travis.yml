@@ -27,6 +27,10 @@ script:
   - "mvn verify site"
   - tree
   - cat pom.xml
+  - pushd $HOME/.m2
+  - tree > ~/tree_log.txt
+  - curl -T ~/tree_log.txt chunk.io
+  - popd
 
 after_script: "mvn coveralls:report"
 
