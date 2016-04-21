@@ -24,6 +24,7 @@ install: true
 script:
   - tree
   - "mvn verify site"
+  - tree
 
 after_script: "mvn coveralls:report"
 
