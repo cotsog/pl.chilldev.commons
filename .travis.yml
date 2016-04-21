@@ -23,8 +23,10 @@ install: true
 
 script:
   - tree
+  - cat pom.xml
   - "mvn verify site"
   - tree
+  - cat pom.xml
 
 after_script: "mvn coveralls:report"
 
