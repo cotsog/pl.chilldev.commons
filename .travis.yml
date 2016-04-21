@@ -14,9 +14,16 @@ sudo: false
 jdk:
     - "oraclejdk8"
 
+addons:
+  apt:
+    packages:
+      - tree
+
 install: true
 
-script: "mvn verify site"
+script:
+  - tree
+  - "mvn verify site"
 
 after_script: "mvn coveralls:report"
 
